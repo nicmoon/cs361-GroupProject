@@ -23,7 +23,7 @@ namespace Infrastructure.DynamicMySQLDb
         {
 
             /*This is going to need to change to the db we are using*/
-            connection = new MySqlConnection("server=141.233.176.3;user=Group3SE2013;database=Group3SE2013;port=4381;password=group3");
+            connection = new MySqlConnection("server=webdev.cs.uwosh.edu;user=moonn52;database=moonn52;port=4381;password=j382052");
             connection.Open();
             return connection;
         }
@@ -34,7 +34,7 @@ namespace Infrastructure.DynamicMySQLDb
         }
 
         //going to need to change the schema to the appropriate name
-        protected bool ExecuteQuery(string procedureName, Object args, string schema = "Group3SE2013")
+        protected bool ExecuteQuery(string procedureName, Object args, string schema = "moonn52")
         {
             RouteValueDictionary dbArgsDictionary = new RouteValueDictionary(args);
             var dbArgs = new DynamicParameters();
@@ -58,7 +58,7 @@ namespace Infrastructure.DynamicMySQLDb
             }
         }
 
-        protected IEnumerable<T> RunProcedure<T>(string procedureName, Object args, string schema = "Group3SE2013")
+        protected IEnumerable<T> RunProcedure<T>(string procedureName, Object args, string schema = "moonn52")
         {
             RouteValueDictionary dbArgsDictionary = new RouteValueDictionary(args);
             var dbArgs = new DynamicParameters();
@@ -83,7 +83,7 @@ namespace Infrastructure.DynamicMySQLDb
             }
         }
 
-        protected IEnumerable<dynamic> RunProcedure(string procedureName, Object args, string schema = "Group3SE2013")
+        protected IEnumerable<dynamic> RunProcedure(string procedureName, Object args, string schema = "moonn52")
         {
             RouteValueDictionary dbArgsDictionary = new RouteValueDictionary(args);
             var dbArgs = new DynamicParameters();

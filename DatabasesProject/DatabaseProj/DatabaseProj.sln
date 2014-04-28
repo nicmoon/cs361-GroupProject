@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseProj", "DatabasePro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{0C8963E3-546F-4E5C-BE50-4CE85C50527C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbProjUnitTests", "DbProjUnitTests\DbProjUnitTests.csproj", "{3AB027B9-12E5-43EB-BCCF-1A0918BB90EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0C8963E3-546F-4E5C-BE50-4CE85C50527C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C8963E3-546F-4E5C-BE50-4CE85C50527C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C8963E3-546F-4E5C-BE50-4CE85C50527C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB027B9-12E5-43EB-BCCF-1A0918BB90EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB027B9-12E5-43EB-BCCF-1A0918BB90EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB027B9-12E5-43EB-BCCF-1A0918BB90EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB027B9-12E5-43EB-BCCF-1A0918BB90EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

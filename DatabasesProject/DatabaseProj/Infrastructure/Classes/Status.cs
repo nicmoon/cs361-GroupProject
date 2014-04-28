@@ -11,6 +11,7 @@ namespace Infrastructure.Classes
         Freshman = 1,
         Sophomore = 2,
         Junior,
-        Senior
+        Senior,
+        Unknown = 0
     }
 }
