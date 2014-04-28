@@ -40,6 +40,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AssessmentItem.cs" />
+    <Compile Include="Classes\Criteria.cs" />
+    <Compile Include="Classes\CriteriaResult.cs" />
+    <Compile Include="Classes\Emphasis.cs" />
+    <Compile Include="Classes\Semester.cs" />
+    <Compile Include="Classes\Status.cs" />
+    <Compile Include="Classes\Student.cs" />
+    <Compile Include="Database\DbprojDatabase.cs" />
     <Compile Include="Database\MysqlDynamicDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,7 +65,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
