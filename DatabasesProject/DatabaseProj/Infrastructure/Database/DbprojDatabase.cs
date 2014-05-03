@@ -82,6 +82,18 @@ namespace Infrastructure.Database
             }
         }
 
+        public bool InsertStudent(Student s)
+        {
+            try
+            {
+                return this.ExecuteQuery("InsertStudent", new { firstName = s.FirstName, lastName = s.LastName, middleName = s.MiddleName, status = (int)s.Status, emphasisId = s.Emphasis.Id });
+            }
+            catch(SqlException e)
+            {
+                throw e;
+            }
+        }
+
         public List<AssessmentItem> AssessmetAverageMaxMinByEmhpasis()
         {
             try

@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.QueryControls = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
-            // 
-            // QueryControls
-            // 
-            this.QueryControls.Location = new System.Drawing.Point(12, 37);
-            this.QueryControls.Name = "QueryControls";
-            this.QueryControls.Size = new System.Drawing.Size(200, 537);
-            this.QueryControls.TabIndex = 0;
-            this.QueryControls.TabStop = false;
-            this.QueryControls.Text = "Query Information";
             // 
             // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 574);
-            this.Controls.Add(this.QueryControls);
             this.Name = "HomeScreen";
             this.Text = "HomeScreen";
             this.Load += new System.EventHandler(this.HomeScreen_Load);
@@ -55,6 +44,5 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox QueryControls;
     }
 }
