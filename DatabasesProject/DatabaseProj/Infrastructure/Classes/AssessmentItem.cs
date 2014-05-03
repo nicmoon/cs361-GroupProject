@@ -12,6 +12,12 @@ namespace Infrastructure.Classes
 
         public string Name { get; set; }
 
+        public double AverageScore { get; set; }
+
+        public int LowestScore { get; set; }
+
+        public int HighestScore { get; set; }
+
         public List<Criteria> Criterion { get; set; }
 
         public List<CriteriaResult> CriteriaResults { get; set; }

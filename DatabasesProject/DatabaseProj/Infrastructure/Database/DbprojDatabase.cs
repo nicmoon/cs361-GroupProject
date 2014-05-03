@@ -82,9 +82,52 @@ namespace Infrastructure.Database
             }
         }
 
-        //public List<AssessmentItem> AssessmetAverageMaxMinByEmhpasis()
-        //{
+        public List<AssessmentItem> AssessmetAverageMaxMinByEmhpasis()
+        {
+            try
+            {
+                return this.RunProcedure<AssessmentItem>("AssessmentAverageMaxMinByEmphasis", new {}).ToList();
+            }
+            catch(SqlException e)
+            {
+                throw e;
+            }
+        }
 
+        public AssessmentItem GetMinMaxAvgForStudent(int studentId)
+        {
+            try
+            {
+                return this.RunProcedure<AssessmentItem>("MaxMinAvgForStudent", new { studentId }).FirstOrDefault();
+            }
+            catch(SqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public List<AssessmentItem> GetAllScoresForStudent(int studentId)
+        {
+            try
+            {
+                return this.RunProcedure<AssessmentItem>("AllScoresForStudent", new { studentId }).ToList();
+            }
+            catch(SqlException e)
+            {
+                throw e;
+            }
+        }
+
+        //public List<AssessmentItem>GetAllScoresForStudentByFirstAndLastName(string firstName, string lastName)
+        //{
+        //    try
+        //    {
+        //        return this.RunProcedure<AssessmentItem>("AllScoresForStudentByFirstAndLastName", new { firstName, lastName }).ToList();
+        //    }
+        //    catch(SqlException e)
+        //    {
+        //        throw e;
+        //    }
         //}
     }
 }
