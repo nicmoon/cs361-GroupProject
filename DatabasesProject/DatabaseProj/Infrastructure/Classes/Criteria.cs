@@ -13,5 +13,10 @@ namespace Infrastructure.Classes
         public string Name { get; set; }
 
         public int MaxScore { get; set; }
+
+		public override string ToString()
+		{
+			return CriteriaId + " - " + Name + " ( " + MaxScore + " )";
+		}
     }
 }

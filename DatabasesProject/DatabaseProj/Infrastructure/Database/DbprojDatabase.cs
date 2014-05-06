@@ -12,11 +12,11 @@ namespace Infrastructure.Database
         {
             try
             {
-                return this.RunProcedure<Student>("GetStudentIdByFirstAndLastName", new { firstName, lastName }).First();
+                return RunProcedure<Student>("GetStudentIdByFirstAndLastName", new { firstName, lastName }).First();
             }
             catch(SqlException e)
             {
-                throw e;
+                throw;
             }
         }
 
@@ -24,11 +24,11 @@ namespace Infrastructure.Database
         {
             try
             {
-                return this.RunProcedure<CriteriaResult>("AssessmentSemesterAverageByCriteria", new { assessment = assessmentId, semester = semesterId }).ToList();
+                return RunProcedure<CriteriaResult>("AssessmentSemesterAverageByCriteria", new { assessment = assessmentId, semester = semesterId }).ToList();
             }
             catch(SqlException ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -36,11 +36,11 @@ namespace Infrastructure.Database
         {
             try
             {
-                return this.RunProcedure<CriteriaResult>("AllScoresForStudent", new { studentId }).ToList();
+                return RunProcedure<CriteriaResult>("AllScoresForStudent", new { studentId }).ToList();
             }
             catch(SqlException e)
             {
-                throw e;
+                throw;
             }
         }
 
@@ -82,9 +82,8 @@ namespace Infrastructure.Database
             {
                 IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentInfoByFirstAndLastName", new { firstName, lastName});
                 //just up and running to pass a unit test, will make better later.
-                Student s = new Student();
-                s.AssessmentItems = new List<AssessmentItem>();
-                foreach (dynamic row in rows)
+                Student s = new Student { AssessmentItems = new List<AssessmentItem>() };
+	            foreach (dynamic row in rows)
                 {
                     s.UniversityId = row.UniversityId;
                     s.FirstName = row.FirstName;
@@ -111,11 +110,23 @@ namespace Infrastructure.Database
             }
         }
 
+		public bool InsertCriteria(Criteria c)
+		{
+			try
+			{
+				return ExecuteQuery("AddCriteria", new { name = c.Name, maxScore = c.MaxScore });
+			}
+			catch (SqlException e)
+			{
+				throw e;
+			}
+		}
+
         public bool InsertStudent(Student s)
         {
             try
             {
-                return this.ExecuteQuery("InsertStudent", new { firstName = s.FirstName, lastName = s.LastName, middleName = s.MiddleName, status = (int)s.Status, emphasisId = s.Emphasis.Id });
+                return ExecuteQuery("AddStudent", new { firstName = s.FirstName, lastName = s.LastName, middleName = s.MiddleName, status = (int)s.Status, emphasisId = s.Emphasis.Id });
             }
             catch(SqlException e)
             {
@@ -127,7 +138,7 @@ namespace Infrastructure.Database
         {
             try
             {
-                return this.RunProcedure<AssessmentItem>("AssessmentAverageMaxMinByEmphasis", new {}).ToList();
+                return RunProcedure<AssessmentItem>("AssessmentAverageMaxMinByEmphasis", new {}).ToList();
             }
             catch(SqlException e)
             {
@@ -139,7 +150,7 @@ namespace Infrastructure.Database
         {
             try
             {
-                return this.RunProcedure<AssessmentItem>("MaxMinAvgForStudent", new { studentId }).FirstOrDefault();
+                return RunProcedure<AssessmentItem>("MaxMinAvgForStudent", new { studentId }).FirstOrDefault();
             }
             catch(SqlException e)
             {
@@ -151,13 +162,25 @@ namespace Infrastructure.Database
         {
             try
             {
-                return this.RunProcedure<AssessmentItem>("AllScoresForStudent", new { studentId }).ToList();
+                return RunProcedure<AssessmentItem>("AllScoresForStudent", new { studentId }).ToList();
             }
             catch(SqlException e)
             {
                 throw e;
             }
         }
+
+		public List<Criteria> GetAllCriteria()
+		{
+			try
+			{
+				return RunProcedure<Criteria>("GetAllCriteria", new {}).ToList();
+			}
+			catch (SqlException e)
+			{
+				throw e;
+			}
+		}
 
         //public List<AssessmentItem>GetAllScoresForStudentByFirstAndLastName(string firstName, string lastName)
         //{
