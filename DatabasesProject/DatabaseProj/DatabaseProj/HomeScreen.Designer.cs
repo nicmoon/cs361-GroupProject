@@ -33,6 +33,8 @@
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsmiStudent = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiAddCriteria = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiAddAssessmentItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -64,7 +66,9 @@
 			// addToolStripMenuItem
 			// 
 			this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiStudent});
+            this.tsmiStudent,
+            this.tsmiAddCriteria,
+            this.tsmiAddAssessmentItem});
 			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
 			this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
 			this.addToolStripMenuItem.Text = "&Add";
@@ -75,6 +79,20 @@
 			this.tsmiStudent.Size = new System.Drawing.Size(152, 22);
 			this.tsmiStudent.Text = "&Student";
 			this.tsmiStudent.Click += new System.EventHandler(this.tsmiStudent_Click);
+			// 
+			// tsmiAddCriteria
+			// 
+			this.tsmiAddCriteria.Name = "tsmiAddCriteria";
+			this.tsmiAddCriteria.Size = new System.Drawing.Size(152, 22);
+			this.tsmiAddCriteria.Text = "&Criteria";
+			this.tsmiAddCriteria.Click += new System.EventHandler(this.tsmiAddCriteria_Click);
+			// 
+			// tsmiAddAssessmentItem
+			// 
+			this.tsmiAddAssessmentItem.Name = "tsmiAddAssessmentItem";
+			this.tsmiAddAssessmentItem.Size = new System.Drawing.Size(158, 22);
+			this.tsmiAddAssessmentItem.Text = "&Assesment Item";
+			this.tsmiAddAssessmentItem.Click += new System.EventHandler(this.tsmiAddAssessmentItem_Click);
 			// 
 			// HomeScreen
 			// 
@@ -100,6 +118,8 @@
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tsmiStudent;
+		private System.Windows.Forms.ToolStripMenuItem tsmiAddCriteria;
+		private System.Windows.Forms.ToolStripMenuItem tsmiAddAssessmentItem;
 
     }
 }
