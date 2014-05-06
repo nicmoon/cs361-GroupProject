@@ -14,7 +14,7 @@ namespace DbProjUnitTests
         [TestMethod]
         public void GetStudentByFirstAndLastNameTest()
         {
-            Student s = db.GetStudentInfoByFirstAndLastNameAndEmhpasis("Wade", "Andrews", "Computer Information Systems");
+            Student s = db.GetStudentInfoByFirstAndLastNameAndEmhpasis("Wade", "Andrews");
             Console.WriteLine(s.UniversityId);
             Assert.IsNotNull(s);
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Infrastructure.DynamicMySQLDb;
 using Infrastructure.Classes;
@@ -43,11 +44,43 @@ namespace Infrastructure.Database
             }
         }
 
-        public Student GetStudentInfoByFirstAndLastNameAndEmhpasis(string firstName, string lastName, string emphasis)
+        public List<Student> GetStudentLikeFirstAndLastNameAndEmphasis(string firstName, string lastName,
+                                                                       string emphasis)
         {
             try
             {
-                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentInfoByFirstAndLastName", new { firstName, lastName, emphasis });
+                List<Student> students = new List<Student>();
+                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentsLikeFirstAndLastName",
+                                                                       new {firstName, lastName, emphasis});
+                foreach (dynamic row in rows)
+                {
+                    students.Add(new Student
+                    {
+                        UniversityId = row.UniversityId,
+                        FirstName = row.FirstName,
+                        LastName = row.LastName,
+                        MiddleName = row.MiddleName,
+                        Emphasis = new Emphasis()
+                            {
+                                Name = row.FirstName,
+                                Id = row.Id
+                            }
+                    });
+                }
+                return students;
+            }
+            catch (SqlException e)
+            {
+                
+                throw e;
+            }  
+        }
+
+        public Student GetStudentInfoByFirstAndLastNameAndEmhpasis(string firstName, string lastName)
+        {
+            try
+            {
+                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentInfoByFirstAndLastName", new { firstName, lastName});
                 //just up and running to pass a unit test, will make better later.
                 Student s = new Student { AssessmentItems = new List<AssessmentItem>() };
 	            foreach (dynamic row in rows)
