@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Infrastructure.DynamicMySQLDb;
 using Infrastructure.Classes;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 namespace Infrastructure.Database
 {
     public class DbprojDatabase : MySQLDynamicDb
@@ -47,11 +43,11 @@ namespace Infrastructure.Database
             }
         }
 
-        public Student GetStudentInfoByFirstAndLastName(string firstName, string lastName)
+        public Student GetStudentInfoByFirstAndLastNameAndEmhpasis(string firstName, string lastName, string emphasis)
         {
             try
             {
-                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentInfoByFirstAndLastName", new { firstName, lastName });
+                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentInfoByFirstAndLastName", new { firstName, lastName, emphasis });
                 //just up and running to pass a unit test, will make better later.
                 Student s = new Student();
                 s.AssessmentItems = new List<AssessmentItem>();
