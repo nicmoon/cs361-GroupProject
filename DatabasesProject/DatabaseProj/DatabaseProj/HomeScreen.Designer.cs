@@ -127,6 +127,7 @@
             // 
             this.cbEmphasis.FormattingEnabled = true;
             this.cbEmphasis.Items.AddRange(new object[] {
+            "None",
             "Computer Information Systems",
             "Computer Science",
             "Software Engineering",

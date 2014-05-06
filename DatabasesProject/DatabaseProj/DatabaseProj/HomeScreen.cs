@@ -19,7 +19,6 @@ namespace DatabaseProj
         public HomeScreen()
         {
             InitializeComponent();
-            Size = new Size((int)(Screen.PrimaryScreen.Bounds.Width / 1.5), (int)(Screen.PrimaryScreen.Bounds.Height / 1.5));
 			Database = new DbprojDatabase();
             cbEmphasis.SelectedIndex = 0;
             CenterToScreen();
@@ -53,8 +52,15 @@ namespace DatabaseProj
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            List<Student> students = Database.GetStudentLikeFirstAndLastNameAndEmphasis(txtFirstName.Text, txtLastName.Text, cbEmphasis.SelectedText);
             dg = dgStudentSearchResults;
+            if (dg.Rows.Count > 0)
+            {
+                dg.Rows.Clear();
+            }
+            string emph;
+            emph = cbEmphasis.SelectedText.Equals("None") ? "" : cbEmphasis.SelectedText;
+            List<Student> students = Database.GetStudentLikeFirstAndLastNameAndEmphasis(txtFirstName.Text, txtLastName.Text, emph);
+            
             foreach (Student s in students)
             {
                 dg.Rows.Add(s.UniversityId, s.FirstName, s.MiddleName, s.LastName, s.Status, s.Emphasis.Id, s.Emphasis.Name, new Button { Text = "Edit" }.Text = "Edit");
