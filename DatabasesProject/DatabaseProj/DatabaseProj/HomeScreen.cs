@@ -86,6 +86,7 @@ namespace DatabaseProj
                 dg.Rows.Clear();
             }
             string emph;
+
             emph = cbEmphasis.SelectedText.Equals("None") ? "" : cbEmphasis.SelectedText;
             List<Student> students = Database.GetStudentLikeFirstAndLastNameAndEmphasis(txtFirstName.Text, txtLastName.Text, emph);
             
@@ -106,10 +107,10 @@ namespace DatabaseProj
             //will do stuff wooohoooo
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            Application.Exit();
-        }
+		private void tsmiExit_Click(object sender, EventArgs e)
+		{
+			Dispose();
+			Application.Exit();
+		}
     }
 }
