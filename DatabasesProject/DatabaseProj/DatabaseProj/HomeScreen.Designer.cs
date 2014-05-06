@@ -1,27 +1,28 @@
 ﻿namespace DatabaseProj
 {
-    partial class HomeScreen
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class HomeScreen
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
+<<<<<<< HEAD
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -128,10 +129,138 @@
             this.cbEmphasis.FormattingEnabled = true;
             this.cbEmphasis.Items.AddRange(new object[] {
             "None",
+=======
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiStudent = new System.Windows.Forms.ToolStripMenuItem();
+			this.StudentSearch = new System.Windows.Forms.GroupBox();
+			this.btnSearch = new System.Windows.Forms.Button();
+			this.btnClear = new System.Windows.Forms.Button();
+			this.lblEmphasis = new System.Windows.Forms.Label();
+			this.cbEmphasis = new System.Windows.Forms.ComboBox();
+			this.txtLastName = new System.Windows.Forms.TextBox();
+			this.lblLastName = new System.Windows.Forms.Label();
+			this.txtFirstName = new System.Windows.Forms.TextBox();
+			this.lblFirstName = new System.Windows.Forms.Label();
+			this.dgStudentSearchResults = new System.Windows.Forms.DataGridView();
+			this.UniversityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.EmphasisId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Emphasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.btnExit = new System.Windows.Forms.Button();
+			this.menuStrip1.SuspendLayout();
+			this.StudentSearch.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgStudentSearchResults)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.addToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(1081, 24);
+			this.menuStrip1.TabIndex = 0;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// fileToolStripMenuItem
+			// 
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.fileToolStripMenuItem.Text = "File";
+			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.exitToolStripMenuItem.Text = "Exit";
+			// 
+			// addToolStripMenuItem
+			// 
+			this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiStudent});
+			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+			this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+			this.addToolStripMenuItem.Text = "&Add";
+			// 
+			// tsmiStudent
+			// 
+			this.tsmiStudent.Name = "tsmiStudent";
+			this.tsmiStudent.Size = new System.Drawing.Size(152, 22);
+			this.tsmiStudent.Text = "&Student";
+			this.tsmiStudent.Click += new System.EventHandler(this.tsmiStudent_Click);
+			// 
+			// StudentSearch
+			// 
+			this.StudentSearch.Controls.Add(this.btnSearch);
+			this.StudentSearch.Controls.Add(this.btnClear);
+			this.StudentSearch.Controls.Add(this.lblEmphasis);
+			this.StudentSearch.Controls.Add(this.cbEmphasis);
+			this.StudentSearch.Controls.Add(this.txtLastName);
+			this.StudentSearch.Controls.Add(this.lblLastName);
+			this.StudentSearch.Controls.Add(this.txtFirstName);
+			this.StudentSearch.Controls.Add(this.lblFirstName);
+			this.StudentSearch.Location = new System.Drawing.Point(12, 27);
+			this.StudentSearch.Name = "StudentSearch";
+			this.StudentSearch.Size = new System.Drawing.Size(238, 535);
+			this.StudentSearch.TabIndex = 1;
+			this.StudentSearch.TabStop = false;
+			this.StudentSearch.Text = "Search Options";
+			// 
+			// btnSearch
+			// 
+			this.btnSearch.Location = new System.Drawing.Point(76, 506);
+			this.btnSearch.Name = "btnSearch";
+			this.btnSearch.Size = new System.Drawing.Size(75, 23);
+			this.btnSearch.TabIndex = 2;
+			this.btnSearch.Text = "&Search";
+			this.btnSearch.UseVisualStyleBackColor = true;
+			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+			// 
+			// btnClear
+			// 
+			this.btnClear.Location = new System.Drawing.Point(157, 506);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Size = new System.Drawing.Size(75, 23);
+			this.btnClear.TabIndex = 6;
+			this.btnClear.Text = "&Clear";
+			this.btnClear.UseVisualStyleBackColor = true;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			// 
+			// lblEmphasis
+			// 
+			this.lblEmphasis.AutoSize = true;
+			this.lblEmphasis.Location = new System.Drawing.Point(11, 103);
+			this.lblEmphasis.Name = "lblEmphasis";
+			this.lblEmphasis.Size = new System.Drawing.Size(55, 13);
+			this.lblEmphasis.TabIndex = 5;
+			this.lblEmphasis.Text = "Emphasis:";
+			// 
+			// cbEmphasis
+			// 
+			this.cbEmphasis.FormattingEnabled = true;
+			this.cbEmphasis.Items.AddRange(new object[] {
+>>>>>>> 582d72a3ac2f7e0132eb451d62b304ab81307d33
             "Computer Information Systems",
             "Computer Science",
             "Software Engineering",
             "Undecided"});
+<<<<<<< HEAD
             this.cbEmphasis.Location = new System.Drawing.Point(68, 100);
             this.cbEmphasis.Name = "cbEmphasis";
             this.cbEmphasis.Size = new System.Drawing.Size(164, 21);
@@ -193,6 +322,49 @@
             // 
             this.dgStudentSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStudentSearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+=======
+			this.cbEmphasis.Location = new System.Drawing.Point(68, 100);
+			this.cbEmphasis.Name = "cbEmphasis";
+			this.cbEmphasis.Size = new System.Drawing.Size(164, 21);
+			this.cbEmphasis.TabIndex = 4;
+			// 
+			// txtLastName
+			// 
+			this.txtLastName.Location = new System.Drawing.Point(68, 71);
+			this.txtLastName.Name = "txtLastName";
+			this.txtLastName.Size = new System.Drawing.Size(164, 20);
+			this.txtLastName.TabIndex = 3;
+			// 
+			// lblLastName
+			// 
+			this.lblLastName.AutoSize = true;
+			this.lblLastName.Location = new System.Drawing.Point(5, 74);
+			this.lblLastName.Name = "lblLastName";
+			this.lblLastName.Size = new System.Drawing.Size(61, 13);
+			this.lblLastName.TabIndex = 2;
+			this.lblLastName.Text = "Last Name:";
+			// 
+			// txtFirstName
+			// 
+			this.txtFirstName.Location = new System.Drawing.Point(68, 37);
+			this.txtFirstName.Name = "txtFirstName";
+			this.txtFirstName.Size = new System.Drawing.Size(164, 20);
+			this.txtFirstName.TabIndex = 1;
+			// 
+			// lblFirstName
+			// 
+			this.lblFirstName.AutoSize = true;
+			this.lblFirstName.Location = new System.Drawing.Point(6, 40);
+			this.lblFirstName.Name = "lblFirstName";
+			this.lblFirstName.Size = new System.Drawing.Size(63, 13);
+			this.lblFirstName.TabIndex = 0;
+			this.lblFirstName.Text = "First Name: ";
+			// 
+			// dgStudentSearchResults
+			// 
+			this.dgStudentSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgStudentSearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+>>>>>>> 582d72a3ac2f7e0132eb451d62b304ab81307d33
             this.UniversityId,
             this.FirstName,
             this.MiddleName,
@@ -201,6 +373,7 @@
             this.EmphasisId,
             this.Emphasis,
             this.Edit});
+<<<<<<< HEAD
             this.dgStudentSearchResults.Location = new System.Drawing.Point(277, 47);
             this.dgStudentSearchResults.Name = "dgStudentSearchResults";
             this.dgStudentSearchResults.Size = new System.Drawing.Size(681, 492);
@@ -289,16 +462,107 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgStudentSearchResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+=======
+			this.dgStudentSearchResults.Location = new System.Drawing.Point(277, 47);
+			this.dgStudentSearchResults.Name = "dgStudentSearchResults";
+			this.dgStudentSearchResults.Size = new System.Drawing.Size(681, 492);
+			this.dgStudentSearchResults.TabIndex = 7;
+			// 
+			// UniversityId
+			// 
+			this.UniversityId.HeaderText = "UniversityId";
+			this.UniversityId.Name = "UniversityId";
+			this.UniversityId.ReadOnly = true;
+			this.UniversityId.Visible = false;
+			// 
+			// FirstName
+			// 
+			this.FirstName.HeaderText = "First Name";
+			this.FirstName.Name = "FirstName";
+			this.FirstName.ReadOnly = true;
+			// 
+			// MiddleName
+			// 
+			this.MiddleName.HeaderText = "Middle Name";
+			this.MiddleName.Name = "MiddleName";
+			this.MiddleName.ReadOnly = true;
+			// 
+			// LastName
+			// 
+			this.LastName.HeaderText = "Last Name";
+			this.LastName.Name = "LastName";
+			this.LastName.ReadOnly = true;
+			// 
+			// Status
+			// 
+			this.Status.HeaderText = "Status";
+			this.Status.Name = "Status";
+			this.Status.ReadOnly = true;
+			// 
+			// EmphasisId
+			// 
+			this.EmphasisId.HeaderText = "EmphasisId";
+			this.EmphasisId.Name = "EmphasisId";
+			this.EmphasisId.ReadOnly = true;
+			this.EmphasisId.Visible = false;
+			// 
+			// Emphasis
+			// 
+			this.Emphasis.HeaderText = "Emphasis";
+			this.Emphasis.Name = "Emphasis";
+			this.Emphasis.ReadOnly = true;
+			// 
+			// Edit
+			// 
+			this.Edit.HeaderText = "";
+			this.Edit.Name = "Edit";
+			this.Edit.Text = "Edit";
+			this.Edit.ToolTipText = "Edit Student";
+			this.Edit.Width = 75;
+			// 
+			// btnExit
+			// 
+			this.btnExit.Location = new System.Drawing.Point(994, 539);
+			this.btnExit.Name = "btnExit";
+			this.btnExit.Size = new System.Drawing.Size(75, 23);
+			this.btnExit.TabIndex = 7;
+			this.btnExit.Text = "E&xit";
+			this.btnExit.UseVisualStyleBackColor = true;
+			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+			// 
+			// HomeScreen
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1081, 574);
+			this.Controls.Add(this.btnExit);
+			this.Controls.Add(this.dgStudentSearchResults);
+			this.Controls.Add(this.StudentSearch);
+			this.Controls.Add(this.menuStrip1);
+			this.MainMenuStrip = this.menuStrip1;
+			this.Name = "HomeScreen";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "HomeScreen";
+			this.Load += new System.EventHandler(this.HomeScreen_Load);
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
+			this.StudentSearch.ResumeLayout(false);
+			this.StudentSearch.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgStudentSearchResults)).EndInit();
+			this.ResumeLayout(false);
+			this.PerformLayout();
+>>>>>>> 582d72a3ac2f7e0132eb451d62b304ab81307d33
 
-        }
+		}
 
-        #endregion
+		#endregion
 
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tsmiStudent;
+<<<<<<< HEAD
         private System.Windows.Forms.GroupBox StudentSearch;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
@@ -318,6 +582,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Emphasis;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.Button btnExit;
+=======
+		private System.Windows.Forms.GroupBox StudentSearch;
+		private System.Windows.Forms.Label lblFirstName;
+		private System.Windows.Forms.TextBox txtFirstName;
+		private System.Windows.Forms.TextBox txtLastName;
+		private System.Windows.Forms.Label lblLastName;
+		private System.Windows.Forms.Label lblEmphasis;
+		private System.Windows.Forms.ComboBox cbEmphasis;
+		private System.Windows.Forms.Button btnClear;
+		private System.Windows.Forms.Button btnSearch;
+		private System.Windows.Forms.DataGridView dgStudentSearchResults;
+		private System.Windows.Forms.DataGridViewTextBoxColumn UniversityId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MiddleName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+		private System.Windows.Forms.DataGridViewTextBoxColumn EmphasisId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Emphasis;
+		private System.Windows.Forms.DataGridViewButtonColumn Edit;
+		private System.Windows.Forms.Button btnExit;
+>>>>>>> 582d72a3ac2f7e0132eb451d62b304ab81307d33
 
-    }
+	}
 }
