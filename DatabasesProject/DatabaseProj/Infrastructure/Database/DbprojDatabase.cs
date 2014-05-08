@@ -189,7 +189,6 @@ namespace Infrastructure.Database
 			}
 		}
 
-<<<<<<< HEAD
         public bool UpdateStudent(Student s)
         {
             try
@@ -211,7 +210,7 @@ namespace Infrastructure.Database
                 throw e;
             }
         }
-=======
+
 		public dynamic RawQuery (string query)
 		{
 			try
@@ -223,7 +222,7 @@ namespace Infrastructure.Database
 				throw;
 			}
 		}
->>>>>>> 9173250dc0bdd5bb42c942d0264f2b99ebe0a96a
+
 
         //public List<AssessmentItem>GetAllScoresForStudentByFirstAndLastName(string firstName, string lastName)
         //{
