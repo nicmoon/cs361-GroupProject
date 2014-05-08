@@ -35,11 +35,16 @@ namespace DatabaseProj
 			{
 				// go to db
 				MessageBox.Show( "Successfully added the student.", "Success" );
+                if (!cbEmphasis.SelectedItem.ToString().Equals("None"))
+                {
+                    populateDataGridView();
+                }
 			}
 			else if (student != null)
 			{
 				MessageBox.Show( "Adding student failure.", "Error" );
 			}
+           
 		}
 
 		private void tsmiAddCriteria_Click(object sender, EventArgs e)
@@ -80,31 +85,57 @@ namespace DatabaseProj
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            populateDataGridView();
+        }
+
+        private void populateDataGridView()
+        {
             dg = dgStudentSearchResults;
             if (dg.Rows.Count > 0)
             {
-                dg.Rows.Clear();
+                dg.RowCount = 0;
             }
-            string emph;
-
-            emph = cbEmphasis.SelectedText.Equals("None") ? "" : cbEmphasis.SelectedText;
+            string emph = cbEmphasis.SelectedItem.ToString().Equals("All") ? "" : cbEmphasis.SelectedItem.ToString();
             List<Student> students = Database.GetStudentLikeFirstAndLastNameAndEmphasis(txtFirstName.Text, txtLastName.Text, emph);
-            
+
             foreach (Student s in students)
             {
                 dg.Rows.Add(s.UniversityId, s.FirstName, s.MiddleName, s.LastName, s.Status, s.Emphasis.Id, s.Emphasis.Name, new Button { Text = "Edit" }.Text = "Edit");
-                dg.CellClick += new DataGridViewCellEventHandler(dg_EventHandler);
+                dg.CellClick += dg_EventHandler;
             }
-            
         }
 
         private void dg_EventHandler(object args, DataGridViewCellEventArgs e)
         {
             int colIndex = e.ColumnIndex;
             int rowIndex = e.RowIndex;
-
+            if (rowIndex == -1)
+            {
+                return;
+            }
             DataGridViewRow row = dg.Rows[rowIndex];
-            //will do stuff wooohoooo
+            //edit button
+            if (colIndex == 7)
+            {
+                Student s = EditStudent.ShowAndReturnObject(new Student 
+                { 
+                    UniversityId = (int)row.Cells[0].Value,
+                    FirstName = (string)row.Cells[1].Value, 
+                    MiddleName = (string)row.Cells[2].Value, 
+                    LastName = (string)row.Cells[3].Value,                      
+                    Status = (Status)row.Cells[4].Value, 
+                    Emphasis = new Emphasis 
+                    { 
+                        Id = (int)row.Cells[5].Value 
+                    } 
+                });
+                    bool success = Database.UpdateStudent(s);
+                if (!success)
+                {
+                    MessageBox.Show("An error occurred while updating student " + s.FirstName + " " + s.LastName +
+                                    ".", "Error");
+                }
+            }
         }
 
 		private void tsmiExit_Click(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace DatabaseProj
 			while (true)
 			{
 				DialogResult ans = dlg.ShowDialog();
-
+			    
 				if ( ans == DialogResult.OK )
 				{
 					if ( dlg.txtFirstName.Text.Length <= 0 )

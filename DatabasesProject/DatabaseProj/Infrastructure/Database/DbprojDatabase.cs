@@ -40,7 +40,7 @@ namespace Infrastructure.Database
             }
             catch(SqlException e)
             {
-                throw;
+                throw e;
             }
         }
 
@@ -60,9 +60,10 @@ namespace Infrastructure.Database
                         FirstName = row.FirstName,
                         LastName = row.LastName,
                         MiddleName = row.MiddleName,
+                        Status = (Status)row.Status,
                         Emphasis = new Emphasis()
                             {
-                                Name = row.FirstName,
+                                Name = row.Name,
                                 Id = row.Id
                             }
                     });
@@ -181,6 +182,28 @@ namespace Infrastructure.Database
 				throw e;
 			}
 		}
+
+        public bool UpdateStudent(Student s)
+        {
+            try
+            {
+                return ExecuteQuery("EditStudent",
+                                    new
+                                        {
+                                            studentId = s.UniversityId,
+                                            firstName = s.FirstName,
+                                            lastName = s.LastName,
+                                            middleName = s.MiddleName,
+                                            statusType = (int)s.Status,
+                                            emphasisId = s.Emphasis.Id
+                                        });
+            }
+            catch (SqlException e)
+            {
+                
+                throw e;
+            }
+        }
 
         //public List<AssessmentItem>GetAllScoresForStudentByFirstAndLastName(string firstName, string lastName)
         //{
