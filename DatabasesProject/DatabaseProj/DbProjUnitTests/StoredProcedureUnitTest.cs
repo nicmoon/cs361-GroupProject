@@ -11,13 +11,13 @@ namespace DbProjUnitTests
     {
         DbprojDatabase db = new DbprojDatabase();
 
-        [TestMethod]
+    /*    [TestMethod]
         public void GetStudentByFirstAndLastNameTest()
         {
-            Student s = db.GetStudentInfoByFirstAndLastNameAndEmhpasis("Wade", "Andrews");
+            Student s = db.GetStudentInfoByFirstAndLastNameAndEmhpasis(1);
             Console.WriteLine(s.UniversityId);
             Assert.IsNotNull(s);
-        }
+        }*/
 
         [TestMethod]
         public void GetAssessmentSemesterAverageByCriteria()

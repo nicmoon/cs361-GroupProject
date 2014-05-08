@@ -100,7 +100,7 @@ namespace DatabaseProj
 
             foreach (Student s in students)
             {
-                dg.Rows.Add(s.UniversityId, s.FirstName, s.MiddleName, s.LastName, s.Status, s.Emphasis.Id, s.Emphasis.Name, new Button { Text = "Edit" }.Text = "Edit");
+                dg.Rows.Add(s.UniversityId, s.FirstName, s.MiddleName, s.LastName, s.Status, s.Emphasis.Id, s.Emphasis.Name, new Button { Text = "Edit" }.Text = "Edit", new Button { Text = "View" }.Text = "View");
                 dg.CellClick += dg_EventHandler;
             }
         }
@@ -139,6 +139,10 @@ namespace DatabaseProj
                     MessageBox.Show("An error occurred while updating student " + s.FirstName + " " + s.LastName +
                                     ".", "Error");
                 }
+            }
+            if (colIndex == 8)
+            {
+                Student s = Database.GetStu
             }
         }
 

@@ -77,12 +77,11 @@ namespace Infrastructure.Database
             }  
         }
 
-        public Student GetStudentInfoByFirstAndLastNameAndEmhpasis(string firstName, string lastName)
+        public Student GetStudentInfoByStudentId(int studentId)
         {
             try
             {
-                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentInfoByFirstAndLastName", new { firstName, lastName});
-                //just up and running to pass a unit test, will make better later.
+                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentInfoByFirstAndLastName", new { studentId });
                 Student s = new Student { AssessmentItems = new List<AssessmentItem>() };
 	            foreach (dynamic row in rows)
                 {
