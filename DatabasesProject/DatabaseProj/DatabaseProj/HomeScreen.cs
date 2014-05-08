@@ -142,7 +142,7 @@ namespace DatabaseProj
             }
             if (colIndex == 8)
             {
-                Student s = Database.GetStu
+                //Student s = Database.GetStu
             }
         }
 

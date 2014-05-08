@@ -81,26 +81,9 @@ namespace Infrastructure.Database
         {
             try
             {
-                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentInfoByFirstAndLastName", new { studentId });
-                Student s = new Student { AssessmentItems = new List<AssessmentItem>() };
-	            foreach (dynamic row in rows)
-                {
-                    s.UniversityId = row.UniversityId;
-                    s.FirstName = row.FirstName;
-                    s.LastName = row.LastName;
-                    s.MiddleName = row.MiddleName;
-                    s.Status = (Status)row.Status;
-                    s.Emphasis = new Emphasis
-                    {
-                        Id = row.EmphasisId,
-                        Name = row.EmphasisName
-                    };
-                    s.AssessmentItems.Add(new AssessmentItem
-                    {
-                        Id = row.AssessmentId,
-                        Name = row.AssessmentName
-                    });
-                }
+                Student s = RunProcedure<Student>("GetStudentInfoByFirstAndLastName", new { studentId }).FirstOrDefault();
+                List<AssessmentItem> assessmentItems =
+                    RunProcedure<AssessmentItem>("GetStudentAssessmentsById", new {studentId}).ToList();
 
                 return s;
             }
