@@ -107,5 +107,20 @@ namespace Infrastructure.DynamicMySQLDb
                 throw ex;
             }
         }
+
+		protected dynamic RawQuery ( string query, string schedma = "moonn52" )
+		{
+			try
+			{
+				using ( MySqlConnection connection = GetOpenConnection() )
+				{
+					return connection.Query( query );
+				}
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
     }
 }

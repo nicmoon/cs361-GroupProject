@@ -8,7 +8,7 @@ namespace Infrastructure.Classes
 {
     public class Criteria
     {
-        public int CriteriaId { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
@@ -16,7 +16,7 @@ namespace Infrastructure.Classes
 
 		public override string ToString()
 		{
-			return CriteriaId + " - " + Name + " ( " + MaxScore + " )";
+			return Id + " - " + Name + " ( " + MaxScore + " )";
 		}
     }
 }

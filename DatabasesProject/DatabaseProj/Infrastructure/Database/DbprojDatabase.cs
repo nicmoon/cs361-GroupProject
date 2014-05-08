@@ -134,6 +134,12 @@ namespace Infrastructure.Database
             }
         }
 
+		public bool InsertAssessmentItem ( AssessmentItem ai )
+		{
+			RawQuery( ai.AddQuery );
+			return true;
+		}
+
         public List<AssessmentItem> AssessmetAverageMaxMinByEmhpasis()
         {
             try
@@ -179,6 +185,18 @@ namespace Infrastructure.Database
 			catch (SqlException e)
 			{
 				throw e;
+			}
+		}
+
+		public dynamic RawQuery (string query)
+		{
+			try
+			{
+				return base.RawQuery( query );
+			}
+			catch ( Exception )
+			{
+				throw;
 			}
 		}
 

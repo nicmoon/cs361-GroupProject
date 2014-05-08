@@ -54,6 +54,8 @@
 			this.Emphasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.btnExit = new System.Windows.Forms.Button();
+			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiCustom = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.StudentSearch.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgStudentSearchResults)).BeginInit();
@@ -63,7 +65,8 @@
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.addToolStripMenuItem});
+            this.addToolStripMenuItem,
+            this.viewToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(1081, 24);
@@ -81,7 +84,7 @@
 			// tsmiExit
 			// 
 			this.tsmiExit.Name = "tsmiExit";
-			this.tsmiExit.Size = new System.Drawing.Size(152, 22);
+			this.tsmiExit.Size = new System.Drawing.Size(92, 22);
 			this.tsmiExit.Text = "Exit";
 			this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
 			// 
@@ -285,6 +288,21 @@
 			this.btnExit.Text = "E&xit";
 			this.btnExit.UseVisualStyleBackColor = true;
 			// 
+			// viewToolStripMenuItem
+			// 
+			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCustom});
+			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.viewToolStripMenuItem.Text = "&View";
+			// 
+			// tsmiCustom
+			// 
+			this.tsmiCustom.Name = "tsmiCustom";
+			this.tsmiCustom.Size = new System.Drawing.Size(152, 22);
+			this.tsmiCustom.Text = "&Custom Query";
+			this.tsmiCustom.Click += new System.EventHandler(this.tsmiCustom_Click);
+			// 
 			// HomeScreen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +355,8 @@
         private System.Windows.Forms.Button btnExit;
 		private System.Windows.Forms.ToolStripMenuItem tsmiAddCriteria;
 		private System.Windows.Forms.ToolStripMenuItem tsmiAddAssessmentItem;
+		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tsmiCustom;
 
     }
 }
