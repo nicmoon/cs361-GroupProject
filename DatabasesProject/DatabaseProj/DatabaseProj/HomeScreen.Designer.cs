@@ -53,7 +53,6 @@
 			this.EmphasisId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Emphasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.btnExit = new System.Windows.Forms.Button();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsmiCustom = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
@@ -282,15 +281,7 @@
 			this.Edit.Text = "Edit";
 			this.Edit.ToolTipText = "Edit Student";
 			this.Edit.Width = 75;
-			// 
-			// btnExit
-			// 
-			this.btnExit.Location = new System.Drawing.Point(994, 539);
-			this.btnExit.Name = "btnExit";
-			this.btnExit.Size = new System.Drawing.Size(75, 23);
-			this.btnExit.TabIndex = 7;
-			this.btnExit.Text = "E&xit";
-			this.btnExit.UseVisualStyleBackColor = true;
+
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -312,7 +303,6 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1081, 574);
-			this.Controls.Add(this.btnExit);
 			this.Controls.Add(this.dgStudentSearchResults);
 			this.Controls.Add(this.StudentSearch);
 			this.Controls.Add(this.menuStrip1);

@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="EditStudent.Designer.cs">
       <DependentUpon>EditStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditStudent.resx">
       <DependentUpon>EditStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomQuery.resx">
       <DependentUpon>CustomQuery.cs</DependentUpon>
     </EmbeddedResource>
