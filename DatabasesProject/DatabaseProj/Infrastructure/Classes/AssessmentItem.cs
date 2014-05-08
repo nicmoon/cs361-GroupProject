@@ -21,5 +21,11 @@ namespace Infrastructure.Classes
         public List<Criteria> Criterion { get; set; }
 
         public List<CriteriaResult> CriteriaResults { get; set; }
+
+		public string AddQuery {get
+		{
+			// todo return object for verification
+			return "INSERT INTO AssessmentItem (`Name`) VALUES ('" + Name + "'); INSERT INTO AssessmentCriteria (`AssessmentId`, `CriteriaId`) VALUES " + Criterion.Select(x => "( LAST_INSERT_ID(), " + x.Id + " )").Aggregate((x, y) => x + ", " + y) + "; SELECT 1 AS `Id`;";
+		}}
     }
 }

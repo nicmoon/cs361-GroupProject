@@ -64,12 +64,12 @@ namespace DatabaseProj
 		private void tsmiAddAssessmentItem_Click(object sender, EventArgs e)
 		{
 			AssessmentItem ai = FrmAddAssessmentItem.ShowAndReturnObject( Database.GetAllCriteria() );
-			if (ai != null /*&& Database.InsertCriteria(crit)*/)
+			if (ai != null && Database.InsertAssessmentItem( ai ))
 			{
 				// go to db
 				MessageBox.Show("Successfully added the criteria.", "Success");
 			}
-			else /*if (ai != null)*/
+			else if (ai != null)
 			{
 				MessageBox.Show("Adding criteria failure.", "Error");
 			}
@@ -142,6 +142,11 @@ namespace DatabaseProj
 		{
 			Dispose();
 			Application.Exit();
+		}
+
+		private void tsmiCustom_Click(object sender, EventArgs e)
+		{
+			new CustomQuery().ShowDialog();
 		}
     }
 }

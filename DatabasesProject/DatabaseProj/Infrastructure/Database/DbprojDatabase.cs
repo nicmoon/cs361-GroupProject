@@ -135,6 +135,12 @@ namespace Infrastructure.Database
             }
         }
 
+		public bool InsertAssessmentItem ( AssessmentItem ai )
+		{
+			RawQuery( ai.AddQuery );
+			return true;
+		}
+
         public List<AssessmentItem> AssessmetAverageMaxMinByEmhpasis()
         {
             try
@@ -183,6 +189,7 @@ namespace Infrastructure.Database
 			}
 		}
 
+<<<<<<< HEAD
         public bool UpdateStudent(Student s)
         {
             try
@@ -204,6 +211,19 @@ namespace Infrastructure.Database
                 throw e;
             }
         }
+=======
+		public dynamic RawQuery (string query)
+		{
+			try
+			{
+				return base.RawQuery( query );
+			}
+			catch ( Exception )
+			{
+				throw;
+			}
+		}
+>>>>>>> 9173250dc0bdd5bb42c942d0264f2b99ebe0a96a
 
         //public List<AssessmentItem>GetAllScoresForStudentByFirstAndLastName(string firstName, string lastName)
         //{
