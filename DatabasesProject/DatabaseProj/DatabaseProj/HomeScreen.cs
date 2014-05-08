@@ -129,7 +129,11 @@ namespace DatabaseProj
                         Id = (int)row.Cells[5].Value 
                     } 
                 });
-                    bool success = Database.UpdateStudent(s);
+                if (s == null)
+                {
+                    return;
+                }
+                bool success = Database.UpdateStudent(s);
                 if (!success)
                 {
                     MessageBox.Show("An error occurred while updating student " + s.FirstName + " " + s.LastName +
