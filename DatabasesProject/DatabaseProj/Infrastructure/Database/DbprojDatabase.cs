@@ -78,73 +78,11 @@ namespace Infrastructure.Database
             }  
         }
 
-        public Dictionary<SemesterAssessment, ResultList> GetStudentInfoByStudentId(int studentId)
+        public Student GetStudentInfoByStudentId(int studentId)
         {
-            return DBAssessmentItem.ToCriteria(RunProcedure<DBAssessmentItem>("GetStudentAssessmentsById", new { studentId }));
-//            try
-//            {
-//                Student s = RunProcedure<Student>("GetStudentInfoByFirstAndLastName", new { studentId }).FirstOrDefault();
-//                List<AssessmentItem> assessmentItems =
-//                    RunProcedure<AssessmentItem>("GetStudentAssessmentsById", new {studentId}).ToList();
-//
-//                //s.AssessmentItems = assessmentItems;
-//
-//                IEnumerable<dynamic> rows = RunProcedure<dynamic>("GetStudentAssessmentsById", new {studentId});
-//                Dictionary<int, List<AssessmentItem>>  dict = new Dictionary<int, List<AssessmentItem>>();
-//                foreach (dynamic row in rows)
-//                {
-//                    int assessmentId = row.AssessmentId;
-//                    if (!dict.ContainsKey(assessmentId))
-//                    {
-//                        dict.Add(assessmentId, new List<AssessmentItem>());
-//                        dict[assessmentId].Add
-//                            (
-//                                new AssessmentItem
-//                                    {
-//                                        Id = row.AssessmentId,
-//                                        Name = row.Name,
-//                                        Criterion =
-//                                            new List<Criteria>()
-//                                                {
-//                                                    new Criteria {Id = row.CriteriaId, MaxScore = row.MaxScore}
-//                                                },
-//
-//                                        CriteriaResults = new List<CriteriaResult>()
-//                                            {
-//                                                new CriteriaResult
-//                                                    {
-//                                                        FacultyName = row.FacultyName,
-//                                                        Score = row.MaxScore,
-//                                                        SemesterId = row.SemesterId
-//                                                    }
-//                                            }
-//                                    }
-//                            );
-//                    }
-//                    else
-//                    {
-//                        var item = dict[assessmentId].FirstOrDefault(x => x.Id == assessmentId);
-//                        if (item != null)
-//                        {
-//                            item.CriteriaResults.Add(new CriteriaResult
-//                                {
-//                                    FacultyName = row.FacultyName,
-//                                    Score = row.MaxScore,
-//                                    SemesterId = row.SemesterId
-//                                });
-//                        }
-//                    }
-//                }
-//                }
-//
-//                
-//
-//                return s;
-//            }
-//            catch(SqlException e)
-//            {
-//                throw e;
-//            }
+            Student s = GetStudentInfoByStudentId(studentId);
+            s.StudentAssessmentItems = DBAssessmentItem.ToCriteria(RunProcedure<DBAssessmentItem>("GetStudentAssessmentsById", new { studentId }));
+            return s;
         }
 
 		public bool InsertCriteria(Criteria c)

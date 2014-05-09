@@ -19,5 +19,7 @@ namespace Infrastructure.Classes
         public Emphasis Emphasis { get; set; }
 
         public List<AssessmentItem> AssessmentItems { get; set; }
+
+        public Dictionary<SemesterAssessment, ResultList> StudentAssessmentItems { get; set; }
     }
 }
