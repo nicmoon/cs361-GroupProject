@@ -77,10 +77,11 @@ namespace DatabaseProj
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtFirstName.Clear();
-            txtLastName.Clear();
-            cbEmphasis.SelectedIndex = 0;
-            dg.Rows.Clear();
+            Dictionary<SemesterAssessment, ResultList> t = Database.GetStudentInfoByStudentId(1);
+//            txtFirstName.Clear();
+//            txtLastName.Clear();
+//            cbEmphasis.SelectedIndex = 0;
+//            dg.Rows.Clear();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

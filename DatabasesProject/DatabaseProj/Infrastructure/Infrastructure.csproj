@@ -52,10 +52,14 @@
     <Compile Include="Classes\AssessmentItem.cs" />
     <Compile Include="Classes\Criteria.cs" />
     <Compile Include="Classes\CriteriaResult.cs" />
+    <Compile Include="Classes\DBAssessmentItem.cs" />
     <Compile Include="Classes\Emphasis.cs" />
+    <Compile Include="Classes\ResultList.cs" />
     <Compile Include="Classes\Semester.cs" />
+    <Compile Include="Classes\SemesterAssessment.cs" />
     <Compile Include="Classes\Status.cs" />
     <Compile Include="Classes\Student.cs" />
+    <Compile Include="Classes\StudentResults.cs" />
     <Compile Include="Database\DbprojDatabase.cs" />
     <Compile Include="Database\MysqlDynamicDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

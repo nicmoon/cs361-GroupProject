@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Infrastructure.DynamicMySQLDb;
@@ -50,7 +51,7 @@ namespace Infrastructure.Database
             try
             {
                 List<Student> students = new List<Student>();
-                IEnumerable<dynamic> rows = this.RunProcedure<dynamic>("GetStudentsLikeFirstAndLastName",
+                IEnumerable<dynamic> rows = RunProcedure<dynamic>("GetStudentsLikeFirstAndLastName",
                                                                        new {firstName, lastName, emphasis});
                 foreach (dynamic row in rows)
                 {
@@ -77,20 +78,73 @@ namespace Infrastructure.Database
             }  
         }
 
-        public Student GetStudentInfoByStudentId(int studentId)
+        public Dictionary<SemesterAssessment, ResultList> GetStudentInfoByStudentId(int studentId)
         {
-            try
-            {
-                Student s = RunProcedure<Student>("GetStudentInfoByFirstAndLastName", new { studentId }).FirstOrDefault();
-                List<AssessmentItem> assessmentItems =
-                    RunProcedure<AssessmentItem>("GetStudentAssessmentsById", new {studentId}).ToList();
-
-                return s;
-            }
-            catch(SqlException e)
-            {
-                throw e;
-            }
+            return DBAssessmentItem.ToCriteria(RunProcedure<DBAssessmentItem>("GetStudentAssessmentsById", new { studentId }));
+//            try
+//            {
+//                Student s = RunProcedure<Student>("GetStudentInfoByFirstAndLastName", new { studentId }).FirstOrDefault();
+//                List<AssessmentItem> assessmentItems =
+//                    RunProcedure<AssessmentItem>("GetStudentAssessmentsById", new {studentId}).ToList();
+//
+//                //s.AssessmentItems = assessmentItems;
+//
+//                IEnumerable<dynamic> rows = RunProcedure<dynamic>("GetStudentAssessmentsById", new {studentId});
+//                Dictionary<int, List<AssessmentItem>>  dict = new Dictionary<int, List<AssessmentItem>>();
+//                foreach (dynamic row in rows)
+//                {
+//                    int assessmentId = row.AssessmentId;
+//                    if (!dict.ContainsKey(assessmentId))
+//                    {
+//                        dict.Add(assessmentId, new List<AssessmentItem>());
+//                        dict[assessmentId].Add
+//                            (
+//                                new AssessmentItem
+//                                    {
+//                                        Id = row.AssessmentId,
+//                                        Name = row.Name,
+//                                        Criterion =
+//                                            new List<Criteria>()
+//                                                {
+//                                                    new Criteria {Id = row.CriteriaId, MaxScore = row.MaxScore}
+//                                                },
+//
+//                                        CriteriaResults = new List<CriteriaResult>()
+//                                            {
+//                                                new CriteriaResult
+//                                                    {
+//                                                        FacultyName = row.FacultyName,
+//                                                        Score = row.MaxScore,
+//                                                        SemesterId = row.SemesterId
+//                                                    }
+//                                            }
+//                                    }
+//                            );
+//                    }
+//                    else
+//                    {
+//                        var item = dict[assessmentId].FirstOrDefault(x => x.Id == assessmentId);
+//                        if (item != null)
+//                        {
+//                            item.CriteriaResults.Add(new CriteriaResult
+//                                {
+//                                    FacultyName = row.FacultyName,
+//                                    Score = row.MaxScore,
+//                                    SemesterId = row.SemesterId
+//                                });
+//                        }
+//                    }
+//                }
+//                }
+//
+//                
+//
+//                return s;
+//            }
+//            catch(SqlException e)
+//            {
+//                throw e;
+//            }
         }
 
 		public bool InsertCriteria(Criteria c)
