@@ -231,6 +231,7 @@
             // 
             this.dgStudentSearchResults.AllowUserToAddRows = false;
             this.dgStudentSearchResults.AllowUserToDeleteRows = false;
+            this.dgStudentSearchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgStudentSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStudentSearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UniversityId,
@@ -297,7 +298,6 @@
             this.Edit.Name = "Edit";
             this.Edit.Text = "Edit";
             this.Edit.ToolTipText = "Edit Student";
-            this.Edit.Width = 75;
             // 
             // View
             // 

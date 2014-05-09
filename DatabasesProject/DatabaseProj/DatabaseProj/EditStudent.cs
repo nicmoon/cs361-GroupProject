@@ -27,6 +27,7 @@ namespace DatabaseProj
             {
                 dlg.cmbStatus.SelectedIndex = (int)s.Status;
             }
+
             while (true)
             {
                 DialogResult ans = dlg.ShowDialog();

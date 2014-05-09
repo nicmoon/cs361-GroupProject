@@ -62,6 +62,7 @@
             // 
             // cmbEmphasis
             // 
+            this.cmbEmphasis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmphasis.FormattingEnabled = true;
             this.cmbEmphasis.Items.AddRange(new object[] {
             "Computer Information Systems",
@@ -84,6 +85,7 @@
             // 
             // cmbStatus
             // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Unknown",

@@ -78,11 +78,30 @@ namespace Infrastructure.Database
             }  
         }
 
+        public Student GetStudentByStudentId(int studentId)
+        {
+            try
+            {
+                return RunProcedure<Student>("GetStudentInfoByStudentId", new { studentId }).FirstOrDefault();
+            }
+            catch(SqlException e)
+            {
+                throw e;
+            }
+        }
+
         public Student GetStudentInfoByStudentId(int studentId)
         {
-            Student s = GetStudentInfoByStudentId(studentId);
-            s.StudentAssessmentItems = DBAssessmentItem.ToCriteria(RunProcedure<DBAssessmentItem>("GetStudentAssessmentsById", new { studentId }));
-            return s;
+            try
+            {
+                Student s = GetStudentByStudentId(studentId);
+                s.StudentAssessmentItems = DBAssessmentItem.ToCriteria(RunProcedure<DBAssessmentItem>("GetStudentAssessmentsById", new { studentId }));
+                return s;
+            }
+           catch(SqlException e)
+            {
+                throw e;
+            }
         }
 
 		public bool InsertCriteria(Criteria c)

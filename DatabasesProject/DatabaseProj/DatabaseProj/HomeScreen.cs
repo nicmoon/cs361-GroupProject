@@ -77,7 +77,6 @@ namespace DatabaseProj
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            //Dictionary<SemesterAssessment, ResultList> t = Database.GetStudentInfoByStudentId(1);
             txtFirstName.Clear();
             txtLastName.Clear();
             cbEmphasis.SelectedIndex = 0;
@@ -95,14 +94,14 @@ namespace DatabaseProj
             if (dg.Rows.Count > 0)
             {
                 dg.RowCount = 0;
+                dg.CellClick -= new DataGridViewCellEventHandler(dg_EventHandler);
             }
             string emph = cbEmphasis.SelectedItem.ToString().Equals("All") ? "" : cbEmphasis.SelectedItem.ToString();
             List<Student> students = Database.GetStudentLikeFirstAndLastNameAndEmphasis(txtFirstName.Text, txtLastName.Text, emph);
-
+            dg.CellClick += new DataGridViewCellEventHandler(dg_EventHandler);
             foreach (Student s in students)
             {
                 dg.Rows.Add(s.UniversityId, s.FirstName, s.MiddleName, s.LastName, s.Status, s.Emphasis.Id, s.Emphasis.Name, new Button { Text = "Edit" }.Text = "Edit", new Button { Text = "View" }.Text = "View");
-                dg.CellClick += dg_EventHandler;
             }
         }
 
@@ -140,10 +139,14 @@ namespace DatabaseProj
                     MessageBox.Show("An error occurred while updating student " + s.FirstName + " " + s.LastName +
                                     ".", "Error");
                 }
+                return;
             }
-            if (colIndex == 8)
+            //view button
+            else if (colIndex == 8)
             {
-                //Student s = Database.GetStu
+                Student s = Database.GetStudentInfoByStudentId((int)row.Cells[0].Value);
+                ViewStudent vs = new ViewStudent(s);
+                vs.Show();
             }
         }
 
