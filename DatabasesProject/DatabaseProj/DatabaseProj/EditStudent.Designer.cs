@@ -175,6 +175,7 @@
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblMiddleName);
             this.Name = "EditStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Student";
             this.ResumeLayout(false);
             this.PerformLayout();

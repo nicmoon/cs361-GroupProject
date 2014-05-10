@@ -33,6 +33,30 @@ namespace Infrastructure.Database
             }
         }
 
+        public List<Semester> GetAllSemesters()
+        {
+            try
+            {
+                return RunProcedure<Semester>("GetAllSemesters", new { }).ToList();
+            }
+            catch(SqlException e)
+            {
+                throw;
+            }
+        }
+
+        public List<AssessmentItem> GetAllAssessments()
+        {
+            try
+            {
+                return RunProcedure<AssessmentItem>("GetAllAssessments", new { }).ToList();
+            }
+            catch(SqlException e)
+            {
+                throw;
+            }
+        }
+
         public List<CriteriaResult> AllScoresForStudent(int studentId)
         {
             try
@@ -101,6 +125,18 @@ namespace Infrastructure.Database
            catch(SqlException e)
             {
                 throw e;
+            }
+        }
+
+        public bool InsertStudentAssessment(int stuId, int asId, int critId, int score, int semId, string facultyName)
+        {
+            try
+            {
+                return ExecuteQuery("InsertStudentAssessment", new { stuId, asId, critId, score, semId, facultyName });
+            }
+            catch(SqlException e)
+            {
+                throw;
             }
         }
 
@@ -201,6 +237,18 @@ namespace Infrastructure.Database
             {
                 
                 throw e;
+            }
+        }
+
+        public List<Criteria>GetCriteriasForAssessment(int assessmentId)
+        {
+            try
+            {
+                return RunProcedure<Criteria>("GetCriteriaForAssessmentId", new { assessmentId }).ToList();
+            }
+            catch(SqlException e)
+            {
+                throw;
             }
         }
 

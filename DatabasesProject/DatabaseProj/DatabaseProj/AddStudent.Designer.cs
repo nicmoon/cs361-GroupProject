@@ -175,6 +175,7 @@
             this.Controls.Add(this.lblMiddleName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmAddStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Student";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Classes;
+using Infrastructure.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace DatabaseProj
 {
     public partial class ViewStudent : Form
     {
+        public DbprojDatabase db = new DbprojDatabase();
         private Student s;
         public ViewStudent(Student stud)
         {
@@ -24,6 +26,16 @@ namespace DatabaseProj
             txtLastName.Text = s.LastName;
             txtStatus.Text = s.Status.ToString();
             txtEmphasis.Text = s.Emphasis.Name;
+            populateAssessmentComboBox();
+            populateSemesterCombo();
+        }
+
+        private void populateAssessmentComboBox()
+        {
+            List<AssessmentItem> items = db.GetAllAssessments();
+            AssessmentCombo.DataSource = items;
+            AssessmentCombo.DisplayMember = "Name";
+            AssessmentCombo.ValueMember = "Id";
         }
 
         private void populateAssessmentTree()
@@ -40,16 +52,68 @@ namespace DatabaseProj
                     {
                         key.Value.FacultyName = "N/A";
                     }
-                    node.Nodes.Add(key.Value.FacultyName + " - " + score);
+                    node.Nodes.Add(key.Value.FacultyName + " - " + score + " Semester Start Date - " + key.Key.Semester.StartDate.ToShortDateString());
                 }
             }
             
         }
 
+        private void populateSemesterCombo()
+        {
+            SemesterComboBox.DataSource = db.GetAllSemesters();
+            SemesterComboBox.ValueMember = "Id";
+            SemesterComboBox.DisplayMember = "StartDate";
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
+            this.db.Dispose();
             this.Dispose();
             this.Close();
+        }
+
+        private void AssessmentCombo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if(AssessmentCombo.SelectionLength != 0)
+            {
+                int assessmentId = (int)AssessmentCombo.SelectedValue;
+                List<Criteria> criteria = db.GetCriteriasForAssessment(assessmentId);
+                CriteraComboBox.DataSource = criteria;
+                CriteraComboBox.ValueMember = "Id";
+                CriteraComboBox.DisplayMember = "Name";
+            }
+        }
+
+        private void AddAssessment_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                int assessmentId = (int)AssessmentCombo.SelectedValue;
+                int critId = (int)CriteraComboBox.SelectedValue;
+                int semesterId = (int)SemesterComboBox.SelectedValue;
+                string facultyName = txtFaculty.Text;
+                int score = Int32.Parse(ScoreDomainUpDown.Text);
+                bool isSuccess = db.InsertStudentAssessment(s.UniversityId, assessmentId, critId, score, semesterId, facultyName);
+                if(!isSuccess)
+                {
+                    MessageBox.Show("An error occurred while inserting the assessment.", "Error");
+                    return;
+                }
+                else
+                {
+                    AssessmentTree.Nodes.Clear();
+                    Emphasis emph = s.Emphasis;
+                    s = db.GetStudentInfoByStudentId(s.UniversityId);
+                    s.Emphasis = emph;
+                    populateAssessmentTree();
+                }
+            }
+            catch(FormatException ex)
+            {
+                MessageBox.Show("Invalid integer for score. Please input an integer.", "Error");
+                return;
+            }
+            
         }
     }
 }
