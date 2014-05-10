@@ -35,10 +35,12 @@ namespace DatabaseProj
 
 			dgvQuery.EditMode = DataGridViewEditMode.EditProgrammatically;
 			dgvQuery.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+			dgvQuery.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dgvQuery.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
 			dgvQuery.CellBorderStyle = DataGridViewCellBorderStyle.Single;
 			dgvQuery.GridColor = SystemColors.ActiveBorder;
 			dgvQuery.RowHeadersVisible = true;
+			dgvQuery.AllowUserToAddRows = false;
 
 			for (int i = 0; i < cols.Count; i++ )
 			{
