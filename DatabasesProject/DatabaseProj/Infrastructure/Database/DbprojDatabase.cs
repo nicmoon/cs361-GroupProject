@@ -215,18 +215,5 @@ namespace Infrastructure.Database
 				throw;
 			}
 		}
-
-
-        //public List<AssessmentItem>GetAllScoresForStudentByFirstAndLastName(string firstName, string lastName)
-        //{
-        //    try
-        //    {
-        //        return this.RunProcedure<AssessmentItem>("AllScoresForStudentByFirstAndLastName", new { firstName, lastName }).ToList();
-        //    }
-        //    catch(SqlException e)
-        //    {
-        //        throw e;
-        //    }
-        //}
     }
 }

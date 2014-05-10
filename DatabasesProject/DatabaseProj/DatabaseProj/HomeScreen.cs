@@ -145,6 +145,7 @@ namespace DatabaseProj
             else if (colIndex == 8)
             {
                 Student s = Database.GetStudentInfoByStudentId((int)row.Cells[0].Value);
+                s.Emphasis = new Emphasis { Id = (int)row.Cells[5].Value, Name = row.Cells[6].Value.ToString() };
                 ViewStudent vs = new ViewStudent(s);
                 vs.Show();
             }
