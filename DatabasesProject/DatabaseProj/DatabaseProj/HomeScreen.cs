@@ -159,7 +159,23 @@ namespace DatabaseProj
 
 		private void tsmiCustom_Click(object sender, EventArgs e)
 		{
+            this.Hide();
 			new CustomQuery().ShowDialog();
+            this.Show();
 		}
+
+        private void assessmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new frmAssessmentView().ShowDialog();
+            this.Show();
+        }
+
+        private void criteriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new CriteriaView().ShowDialog();
+            this.Show();
+        }
     }
 }

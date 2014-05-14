@@ -8,6 +8,12 @@ namespace Infrastructure.Classes
 {
     public class AssessmentItem
     {
+        public AssessmentItem()
+        {
+            Criterion = new List<Criteria>();
+            CriteriaResults = new List<CriteriaResult>();
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }

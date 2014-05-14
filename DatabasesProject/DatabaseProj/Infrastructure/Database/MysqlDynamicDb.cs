@@ -44,18 +44,18 @@ namespace Infrastructure.DynamicMySQLDb
             }
             dynamic dapperArgs = dbArgs;
             procedureName = schema + "." + procedureName;
-            try
-            {
+            //try
+            //{
                 using (MySqlConnection connection = GetOpenConnection())
                 {
                     return connection.Execute(procedureName, dbArgs, commandType: CommandType.StoredProcedure) > 0;
                 }
-            }
-            catch (Exception ex)
-            {
-                //return message here.
-                throw ex;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    //return message here.
+            //    throw ex;
+            //}
         }
 
         protected IEnumerable<T> RunProcedure<T>(string procedureName, Object args, string schema = "moonn52")

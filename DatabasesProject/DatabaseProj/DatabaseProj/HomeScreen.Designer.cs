@@ -37,6 +37,7 @@
             this.tsmiAddAssessmentItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.assessmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StudentSearch = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@
             this.Emphasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.View = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.criteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.StudentSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudentSearchResults)).BeginInit();
@@ -122,7 +124,9 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiCustom});
+            this.tsmiCustom,
+            this.assessmentsToolStripMenuItem,
+            this.criteriaToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "&View";
@@ -130,9 +134,16 @@
             // tsmiCustom
             // 
             this.tsmiCustom.Name = "tsmiCustom";
-            this.tsmiCustom.Size = new System.Drawing.Size(151, 22);
+            this.tsmiCustom.Size = new System.Drawing.Size(152, 22);
             this.tsmiCustom.Text = "&Custom Query";
             this.tsmiCustom.Click += new System.EventHandler(this.tsmiCustom_Click);
+            // 
+            // assessmentsToolStripMenuItem
+            // 
+            this.assessmentsToolStripMenuItem.Name = "assessmentsToolStripMenuItem";
+            this.assessmentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.assessmentsToolStripMenuItem.Text = "&Assessments";
+            this.assessmentsToolStripMenuItem.Click += new System.EventHandler(this.assessmentsToolStripMenuItem_Click);
             // 
             // StudentSearch
             // 
@@ -304,6 +315,13 @@
             this.View.HeaderText = "";
             this.View.Name = "View";
             // 
+            // criteriaToolStripMenuItem
+            // 
+            this.criteriaToolStripMenuItem.Name = "criteriaToolStripMenuItem";
+            this.criteriaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.criteriaToolStripMenuItem.Text = "C&riteria";
+            this.criteriaToolStripMenuItem.Click += new System.EventHandler(this.criteriaToolStripMenuItem_Click);
+            // 
             // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,7 +333,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HomeScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomeScreen";
+            this.Text = "Home (Students)";
             this.Load += new System.EventHandler(this.HomeScreen_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -357,6 +375,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Emphasis;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn View;
+        private System.Windows.Forms.ToolStripMenuItem assessmentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem criteriaToolStripMenuItem;
 
     }
 }

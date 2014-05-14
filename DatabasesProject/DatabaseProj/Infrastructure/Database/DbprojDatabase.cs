@@ -252,6 +252,40 @@ namespace Infrastructure.Database
             }
         }
 
+        public bool EditAssessment(string newName, int curId)
+        {
+            return ExecuteQuery("EditAssessment", new { newName, curId });
+        }
+
+        public bool DeleteAssessment(int inId)
+        {
+            try
+            {
+                return ExecuteQuery("DeleteAssessment", new { inId });
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool EditCriteria(string inName, int inMaxScore, int inId)
+        {
+            return ExecuteQuery("EditCriteria", new { inName, inMaxScore, inId });
+        }
+
+        public bool DeleteCriteria(int inId)
+        {
+            try
+            {
+                return ExecuteQuery("DeleteCriteria", new { inId });
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 		public dynamic RawQuery (string query)
 		{
 			try

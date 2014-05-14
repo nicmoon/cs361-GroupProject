@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AssessmentBindingList.cs" />
     <Compile Include="Classes\AssessmentItem.cs" />
     <Compile Include="Classes\Criteria.cs" />
     <Compile Include="Classes\CriteriaResult.cs" />
