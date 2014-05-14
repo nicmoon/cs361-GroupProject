@@ -41,7 +41,21 @@ namespace DatabaseProj
         private void populateAssessmentTree()
         {
             TreeView assessmentTree = AssessmentTree;
-            
+
+            List<ResultList> temp = s.StudentAssessmentItems.Select(x => x.Value).ToList();
+            int max = temp.Select(x => x.Scores).SelectMany(x => x).Max();
+            int min = temp.Select(x => x.Scores).SelectMany(x => x).Min();
+            double avg = temp.Select(x => x.Scores).SelectMany(x => x).Average();
+            double aAvg = temp.Select(x => x.Scores).Select(x => x.Average()).Average();
+            List<double> aAvgs = temp.Select(x => x.Scores).Select(x => x.Average()).ToList();
+
+            Console.WriteLine();
+            rtbStats.Text = "Max: " + max + "\n";
+            rtbStats.Text += "Min: " + min + "\n";
+            rtbStats.Text += "Average (Criteria): " + avg.ToString("F2") + "\n";
+            rtbStats.Text += "Average (Assessment): " + aAvg.ToString("F2") + "\n";
+            rtbStats.Text += "CSV Average: " + aAvgs.Select(x => x.ToString("F2")).Aggregate((x, y) => x + ", " + y) + "\n";
+
             foreach(KeyValuePair<SemesterAssessment, ResultList> key in s.StudentAssessmentItems)
             {
                 TreeNode node = assessmentTree.Nodes.Add(key.Key.AssessmentItem.Name);

@@ -54,6 +54,7 @@
             this.lblScore = new System.Windows.Forms.Label();
             this.lblCriteria = new System.Windows.Forms.Label();
             this.lblAssessment = new System.Windows.Forms.Label();
+            this.rtbStats = new System.Windows.Forms.RichTextBox();
             this.AssessmentInfoGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.AddAssessmentGroupBox.SuspendLayout();
@@ -61,10 +62,11 @@
             // 
             // AssessmentInfoGroup
             // 
+            this.AssessmentInfoGroup.Controls.Add(this.rtbStats);
             this.AssessmentInfoGroup.Controls.Add(this.AssessmentTree);
             this.AssessmentInfoGroup.Location = new System.Drawing.Point(285, 12);
             this.AssessmentInfoGroup.Name = "AssessmentInfoGroup";
-            this.AssessmentInfoGroup.Size = new System.Drawing.Size(365, 422);
+            this.AssessmentInfoGroup.Size = new System.Drawing.Size(365, 459);
             this.AssessmentInfoGroup.TabIndex = 0;
             this.AssessmentInfoGroup.TabStop = false;
             this.AssessmentInfoGroup.Text = "Assessment Information";
@@ -73,7 +75,7 @@
             // 
             this.AssessmentTree.Location = new System.Drawing.Point(19, 19);
             this.AssessmentTree.Name = "AssessmentTree";
-            this.AssessmentTree.Size = new System.Drawing.Size(326, 386);
+            this.AssessmentTree.Size = new System.Drawing.Size(326, 308);
             this.AssessmentTree.TabIndex = 0;
             // 
             // btnClose
@@ -100,7 +102,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(267, 422);
+            this.groupBox1.Size = new System.Drawing.Size(267, 459);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Information";
@@ -309,6 +311,14 @@
             this.lblAssessment.TabIndex = 0;
             this.lblAssessment.Text = "Assessment: ";
             // 
+            // rtbStats
+            // 
+            this.rtbStats.Location = new System.Drawing.Point(19, 334);
+            this.rtbStats.Name = "rtbStats";
+            this.rtbStats.Size = new System.Drawing.Size(326, 119);
+            this.rtbStats.TabIndex = 1;
+            this.rtbStats.Text = "";
+            // 
             // ViewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,5 +369,6 @@
         private System.Windows.Forms.ComboBox SemesterComboBox;
         private System.Windows.Forms.TextBox txtFaculty;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox rtbStats;
     }
 }
