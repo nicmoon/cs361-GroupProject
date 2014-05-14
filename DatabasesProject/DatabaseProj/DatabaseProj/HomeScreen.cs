@@ -177,5 +177,10 @@ namespace DatabaseProj
             new CriteriaView().ShowDialog();
             this.Show();
         }
+
+        private void semesterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddSemester().ShowDialog();
+        }
     }
 }

@@ -21,6 +21,17 @@ namespace Infrastructure.Database
             }
         }
 
+        public bool AddSemester(Semester s)
+        {
+            try
+            {
+                return ExecuteQuery("AddSemester", new { sDate = s.StartDate });
+            }
+            catch(SqlException e)
+            {
+                throw e;
+            }
+        }
         public List<CriteriaResult> AssessmentSemesterAverageByCriteria(int assessmentId, int semesterId)
         {
             try

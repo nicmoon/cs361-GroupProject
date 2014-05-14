@@ -38,6 +38,7 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.assessmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.criteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StudentSearch = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -57,7 +58,7 @@
             this.Emphasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.View = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.criteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.semesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.StudentSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudentSearchResults)).BeginInit();
@@ -95,7 +96,8 @@
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiStudent,
             this.tsmiAddCriteria,
-            this.tsmiAddAssessmentItem});
+            this.tsmiAddAssessmentItem,
+            this.semesterToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.addToolStripMenuItem.Text = "&Add";
@@ -134,16 +136,23 @@
             // tsmiCustom
             // 
             this.tsmiCustom.Name = "tsmiCustom";
-            this.tsmiCustom.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCustom.Size = new System.Drawing.Size(151, 22);
             this.tsmiCustom.Text = "&Custom Query";
             this.tsmiCustom.Click += new System.EventHandler(this.tsmiCustom_Click);
             // 
             // assessmentsToolStripMenuItem
             // 
             this.assessmentsToolStripMenuItem.Name = "assessmentsToolStripMenuItem";
-            this.assessmentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.assessmentsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.assessmentsToolStripMenuItem.Text = "&Assessments";
             this.assessmentsToolStripMenuItem.Click += new System.EventHandler(this.assessmentsToolStripMenuItem_Click);
+            // 
+            // criteriaToolStripMenuItem
+            // 
+            this.criteriaToolStripMenuItem.Name = "criteriaToolStripMenuItem";
+            this.criteriaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.criteriaToolStripMenuItem.Text = "C&riteria";
+            this.criteriaToolStripMenuItem.Click += new System.EventHandler(this.criteriaToolStripMenuItem_Click);
             // 
             // StudentSearch
             // 
@@ -315,12 +324,12 @@
             this.View.HeaderText = "";
             this.View.Name = "View";
             // 
-            // criteriaToolStripMenuItem
+            // semesterToolStripMenuItem
             // 
-            this.criteriaToolStripMenuItem.Name = "criteriaToolStripMenuItem";
-            this.criteriaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.criteriaToolStripMenuItem.Text = "C&riteria";
-            this.criteriaToolStripMenuItem.Click += new System.EventHandler(this.criteriaToolStripMenuItem_Click);
+            this.semesterToolStripMenuItem.Name = "semesterToolStripMenuItem";
+            this.semesterToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.semesterToolStripMenuItem.Text = "S&emester";
+            this.semesterToolStripMenuItem.Click += new System.EventHandler(this.semesterToolStripMenuItem_Click);
             // 
             // HomeScreen
             // 
@@ -377,6 +386,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn View;
         private System.Windows.Forms.ToolStripMenuItem assessmentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem criteriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem semesterToolStripMenuItem;
 
     }
 }

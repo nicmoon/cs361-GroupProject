@@ -61,6 +61,12 @@
     <Compile Include="AddCriteria.Designer.cs">
       <DependentUpon>AddCriteria.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSemester.Designer.cs">
+      <DependentUpon>AddSemester.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCriteria.resx">
       <DependentUpon>AddCriteria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSemester.resx">
+      <DependentUpon>AddSemester.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddStudent.resx">
       <DependentUpon>AddStudent.cs</DependentUpon>
