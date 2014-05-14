@@ -225,12 +225,13 @@ namespace Infrastructure.Database
                 return ExecuteQuery("EditStudent",
                                     new
                                         {
-                                            studentId = s.UniversityId,
-                                            firstName = s.FirstName,
-                                            lastName = s.LastName,
-                                            middleName = s.MiddleName,
-                                            statusType = (int)s.Status,
-                                            emphasisId = s.Emphasis.Id
+                                            //fN VARCHAR(50), IN lN VARCHAR(50), IN mN VARCHAR(50), IN sT INT, IN eId
+                                            sId = s.UniversityId,
+                                            fN = s.FirstName,
+                                            lN = s.LastName,
+                                            mN = s.MiddleName,
+                                            sT = (int)s.Status,
+                                            eId = s.Emphasis.Id
                                         });
             }
             catch (SqlException e)
